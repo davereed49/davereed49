@@ -1,12 +1,62 @@
-{
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"name": "Project-1",
-			"path": "../../../.vscode/Project-1"
-		}
-	],
-	"settings": {}
+
+#include <Keypad.h>
+#include <FastLED.h>
+
+#define LED_PIN 11
+#define NUM_LEDS 30
+
+CRGB leds[NUM_LEDS];
+
+
+
+const int ROW_NUM = 4;     //four rows
+const int COLUMN_NUM = 4;  //four columns
+
+char keys[ROW_NUM][COLUMN_NUM] = {
+  { '1', '2', '3', 'A' },
+  { '4', '5', '6', 'B' },
+  { '7', '8', '9', 'C' },
+  { '*', '0', '#', 'D' }
+};
+
+byte pin_rows[ROW_NUM] = { 9, 8, 7, 6 };       //connect to the row pinouts of the keypad
+byte pin_column[COLUMN_NUM] = { 5, 4, 3, 2 };  //connect to the column pinouts of the keypad
+
+Keypad keypad = Keypad(makeKeymap(keys), pin_rows, pin_column, ROW_NUM, COLUMN_NUM);
+
+//putting this in (with changes) from Kp Ex #2 PC
+const String nunber = "1";
+String input_number;
+//end
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(11, OUTPUT);
+  FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
+
+  //Added this from KE #2 PC with change (number)
+  input_number.reserve(32);  // maximum input characters is 33, change if needed
+                             //end
+}
+
+void loop() {
+
+
+  char key = keypad.getKey();
+  //added from KE #2
+  if (key) {
+    Serial.println(key);
+  }
+  //end
+  if (key) {
+    leds[8] = CRGB(0, 255, 0);
+    FastLED.show();
+    delay(500);
+  }
+
+  if (key) {
+    leds[4] = CRGB(0, 0, 255);
+    FastLED.show();
+    delay(500);
+  }
 }
