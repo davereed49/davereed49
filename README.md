@@ -11,16 +11,14 @@ You can click the Preview link to take a look at your changes.
 //                           DISCRIPTION OF LED /MONITOR BOARD                           12-30-22
 
 Hi. I'm new to coding. All I know is what I've learned on Paul Mcquarters web sight on Arduino. I have a project in mind and brought a few Arduino Unos and a few other components toward learning about how I would go about this project.
-This is a description of the project. First I should explain that I am into day trading. I'm using 3 monitors. one has my brokerage account where I place the entries and the other two are full of streaming charts. One has a list of 27 stocks listed down the edge of the screen that some may change from day to day. Before the session opens I run through the stocks to see which ones look like they're setting up for a play. Some are not in a good range to play profitably at the moment and are disqualified while others are in different stages; maybe an hour away from a good entry point, etc. 
-What I would like to have is a narrow board mounted along side the monitor with corresponding numbers and a GBR LED, next to each listed stock. Then I could put a qualifying sign telling me which ones to go back to throughout the session to check up on. Once you get tied up trading one or two you get bogged down in going back through the list to see which ones are setting up for the next play.
-I could use a switch of some kind next to each LED but I wouldn't want to do all the wiring, the expense of the switches and I really don't have the room; the ljsted stocks being 9.3 mm apart means the LEDs are 9.3 mm apart. 
-Ultimately I would like to have a GUI that I could minimize and maximize to click green, blue, red or off next to each number, to address the corresponding LED.
-But for now I would settle for a 4 X 4 keypad, the LED board, and an Arduino Uno. By the way, I'm handy and all so the board and hardware are no problem for me. And I'm getting together all of the components. In fact I think I have them all except the board itself which I'll probably have laser cut somewhere here in Phoenix. Also in my learning journey I've decided to go with GBR neo pixels over LEDs so I won't  have to use shift registers.
-So, in a nutshell, I need to make a program that will use a 4 x 4 keypad to turn on a green-blue-red or off, neo pixel next to each of 27 stocks and also turn the whole bunch off when I'm through at the end a the session.
-The keypads are written 1 through 0, A, B, C, D, * and #.   I would imagine an entry might be: 12A for green or 27C for red, 27D to turn it back off and *# to shut then all off or something like that.
-So if you're into taking on that little challenge please get back with me.   Thanks
+This is a description of the project. I have a list of 27 projects that I want to prioritize and occasionally reprioritize. I want to list them down the edge of my monitor screen and build a board of corresponding RGB neo pixels that I can affix to the edge of my monitor. I want to address the 27 neo pixels by a 4 X 4 keypad. The keypad comes labeled 1 through 9, A, B, C, D, *and #. So I would imagine an entry might be 4B for green, 27C for blue, 27D to turn it back off and say *# to turn all the lights off.
+I can put all of the hardware together; the Arduion Uno, the keypad and the board of neo pixels, etc. I’ve made a prototype so I can run the program now. I hope that an Arduino Uno will have the capacity to handle the software.
+Like I said, I’m new to programing and have pieced together a little code. I can get a pixel to turn on; 1 through 9 but can’t go any higher, can’t turn them back off and probably a few other things we’ll consider.
+So I’m looking for a collaborator to help me get the coding together.
+I’ve installed live share and have a mic set up. I’m also on GIT HUB so if you think you would be into it please leave me a link to reach you.
+You can check out what I have so far.   Thanks    Dave
 
-So far I've been able to put together this much code. I can enter a key and get a pixel to turn on the right color. I can't trun it off and I can't get it to recognize two and three key comands.
+
 
 #include <Keypad.h>
 #include <FastLED.h>
