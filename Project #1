@@ -1,3 +1,11 @@
+//This is a description of the project. I have a list of 27 projects that I want to prioritize and occasionally reprioritize. I want to list them down the edge of my monitor screen and build a board of corresponding RGB neo pixels that I can affix to the edge of my monitor. I want to address the 27 neo pixels by a 4 X 4 keypad. The keypad comes labeled 1 through 9, A, B, C, D, *and #. So I would imagine an entry might be 4B for green, 27C for blue, 27D to turn it back off and say *# to turn all the lights off.
+I can put all of the hardware together; the Arduion Uno, the keypad and the board of neo pixels, etc. I’ve made a prototype so I can run the program now. I hope that an Arduino Uno will have the capacity to handle the software.
+Like I said, I’m new to programing and have pieced together a little code. I can get a pixel to turn on; 1 through 9 but can’t go any higher, can’t turn them back off and probably a few other things we’ll consider.
+So I’m looking for a collaborator to help me get the coding together.
+I’ve installed live share and have a mic set up. I’m also on GIT HUB so if you think you would be into it please leave me a link to reach you.
+You can check out what I have so far.   Thanks    Dave
+
+
 #include <Keypad.h>
 #include <FastLED.h>
 
